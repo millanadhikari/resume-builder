@@ -36,7 +36,7 @@ function ExtraCurricular({
         {item.fields.map(
           (obj: any, i: any) =>
             item.type === "Extra-curricular Activities" && (
-              <div className="">
+              <div key={obj.id} className="">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                     <AccordionTrigger>

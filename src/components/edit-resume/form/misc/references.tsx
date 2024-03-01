@@ -46,14 +46,14 @@ function References({
       <div className="flex gap-3">
         <Switch checked={item.checked} onCheckedChange={switchChange} />
         <p className="text-sm text-gray-400">
-          I'd like to hide references and make them available only upon request.
+          I`&apos`d like to hide references and make them available only upon request.
         </p>
       </div>
       <div className="grid gap-5 mt-4">
         {item.fields.map(
           (obj: any, i: any) =>
             Object.keys(obj)[1] === "fullName" && (
-              <div className="">
+              <div key={obj.id} className="">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                     <AccordionTrigger>

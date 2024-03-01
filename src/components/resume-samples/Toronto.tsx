@@ -1,3 +1,5 @@
+'use client'
+
 import { useAppStore } from "@/store/store";
 import React, { useEffect, useState } from "react";
 
@@ -71,7 +73,7 @@ function Toronto({
             <div>
               <h1 className="text-xl font-bold">Employment History</h1>
               {employment[0].fields.map((item: any) => (
-                <div>
+                <div key={item.id}>
                   <h2
                     className={`mt-${spacing} w-fit bg-${template?.color} text-sm text-white px-2 font-bold`}
                   >
@@ -117,7 +119,7 @@ function Toronto({
                 <div>
                   <h1 className="text-xl font-bold">Internships</h1>
                   {internships.fields.map((item: any) => (
-                    <div>
+                    <div key={item.id}>
                       <h2
                         className={`mt-${spacing} w-fit bg-gray-800 text-sm text-white px-2 font-bold`}
                       >
@@ -173,7 +175,7 @@ function Toronto({
           )}
 
           {custom.map((course: any) => (
-            <div>
+            <div key={course.id}>
               {course.header === "Courses" && course.fields.length > 0 && (
                 <div
                   className={`bg-gray-200 rounded-lg py-2 px-3 mt-${spacing}`}

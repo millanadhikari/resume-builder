@@ -63,7 +63,7 @@ export function BottomDrawer({ template, setTemplate, colors, setColor }: any) {
                 <h1 className="font-semibold">ACCENT COLOR</h1>
                 <div className="flex justify-center gap-4 mt-3">
                   {colors.map((color: any) => (
-                    <div
+                    <div key={color}
                       onClick={() => setColor(color.color)}
                       className={`relative bg-${color.color} flex items-center justify-center ring-2 ring-gray-500 h-7 w-7 rounded-full cursor-pointer group`}
                     >

@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
         <p className="text-center md:text-[18px] text-[17px] md:w-[600px]">
           Use professional field-tested resume templates that follow the exact{" "}
-          'resume rules' employers look for. Easy to use and done within minutes
+          `&apos`resume rules`&apos` employers look for. Easy to use and done within minutes
           - try now for free!
         </p>
         <Button onClick={()=> router.push('/resume-templates')} className="bg-[#1a91f0] px-7 py-7 text-lg font-semibold my-7 hover:bg-blue-500">

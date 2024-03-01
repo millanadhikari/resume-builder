@@ -25,7 +25,7 @@ function Hobbies({
         {item.fields.map(
           (obj: any) =>
             Object.keys(obj)[1] === "like" && (
-              <div className="">
+              <div key={obj.id} className="">
                 <div>
                   <div className="grid gap-8 md:grid-cols-2 items-center ">
                     <div className=" ">

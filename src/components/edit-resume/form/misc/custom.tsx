@@ -79,7 +79,7 @@ function Custom({
         {item.fields.map(
           (obj: any, i: any) =>
             item.type == "custom" && (
-              <div className="">
+              <div key={obj.id} className="">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                     <AccordionTrigger>

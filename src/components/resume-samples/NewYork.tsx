@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { IoPerson } from "react-icons/io5";
@@ -129,7 +130,7 @@ function NewYork({
           </div>
 
           {custom.map((references: any) => (
-            <div>
+            <div key={references.id}>
               {references.header === "References" && (
                 <div className="flex items-left mt-5 gap-3">
                   <span className="mt-[6px]">

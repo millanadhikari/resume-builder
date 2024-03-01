@@ -562,16 +562,16 @@ function Details() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref1]);
+  }, [ref1, resumeDetails]);
 
-  useEffect(() => {
-    console.log("omg", summary);
-  }, [summary]);
+  // useEffect(() => {
+  //   console.log("omg", summary);
+  // }, [summary]);
   return (
     <div className="w-full my-10 ">
       <div className="w-full ">
         {resumeDetails.map((item, itemIndex) => (
-          <div>
+          <div key={item.id}>
             <div className="flex items-center mb-4 ">
               <input
                 className="text-xl md:text-2xl font-bold placeholder:text-black focus:outline-none bg-white"

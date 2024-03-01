@@ -53,7 +53,7 @@ function Head({ template, setTemplate, preview, setPreview, colors, setColor }: 
         </div>
         <div className="border-l-2 pl-6 ml-2 border-gray-500 flex items-center gap-3">
           {colors.map((color: any) => (
-            <div
+            <div key={color}
               onClick={() => setColor(color.color)}
               className={`relative bg-${color.color} flex items-center justify-center ring-2 ring-gray-500 h-7 w-7 rounded-full cursor-pointer group`}
             >

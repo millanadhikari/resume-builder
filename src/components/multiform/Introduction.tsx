@@ -14,7 +14,7 @@ function Introduction({
     <div className="mt-10 mx-5 flex flex-col md:items-center">
       <h1 className="text-4xl font-bold text-[#1a91f0]">Add your name </h1>
       <p className="text-md mt-3 md:text-lg">
-        You made a great template selection! Now let's add your name to it.
+        You made a great template selection! Now let`&apos`s add your name to it.
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="my-6 w-full md:w-[500px]">

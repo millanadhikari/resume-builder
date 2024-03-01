@@ -39,7 +39,7 @@ function Page() {
                   Ensure your resume fits the job opening
                 </h1>
                 <p className="text-[0.9rem] text-gray-500">
-                  Simply paste the link to the job listing. We'll help you
+                  Simply paste the link to the job listing. We`&apos`ll help you
                   optimize your resume
                 </p>
               </div>
