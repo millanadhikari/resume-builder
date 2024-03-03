@@ -3,6 +3,7 @@ import Details from "@/components/edit-resume/form/details";
 import { IntroDialog } from "@/components/edit-resume/intro-dialog";
 import Lady from "@/components/edit-resume/lady";
 import { PopoverDemo } from "@/components/edit-resume/profile-select";
+import ResumeScore from "@/components/edit-resume/resume-score/resumeScore";
 import Display from "@/components/editor/Display";
 import Head from "@/components/editor/components/Head";
 import PreviewIcon from "@/components/editor/components/PreviewIcon";
@@ -30,6 +31,8 @@ function Page() {
               <p className="text-gray-400">English</p>
             </div>
           </div>
+
+          <ResumeScore/>
 
           <div className="bg-blue-50 w-full hover:bg-blue-100 flex items-center justify-between py-4 pr-5 rounded-md mt-10 gap-5 cursor-pointer">
             <div className="flex items-center gap-4">

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useAppStore } from "@/store/store";
 import React, { useEffect, useState } from "react";
@@ -11,23 +11,22 @@ function Toronto({
   skills,
   custom,
   summary,
-  template
+  template,
 }: any) {
   const [spacing, setSpacing] = useState(3);
   const [color, setColor] = useState("blue");
   // const {resumeDetails } = useAppStore()
 
-
   useEffect(() => {
-    console.log("manai taho", resumeDetails);
-  }, [resumeDetails]);
+    console.log("manai taho", employment);
+  }, [employment]);
 
   const summaryHTML = (data: any) => {
     return <div dangerouslySetInnerHTML={{ __html: data }} />;
   };
   return (
     <div
-      className={`w-full  bg-white  lg:w-[700px] mt-10 rounded-md h-max pb-50 md:h-[850px] py-6 px-3 text-${template.color}`}
+      className={`w-full bg-white  lg:w-[700px] mt-10 rounded-md h-max pb-50 md:h-[850px] py-6 px-3 text-${template?.color}`}
     >
       <div className="flex gap-4 border-b-2 pb-5">
         <div className="w-2/5 ">
@@ -75,9 +74,9 @@ function Toronto({
               {employment[0].fields.map((item: any) => (
                 <div key={item.id}>
                   <h2
-                    className={`mt-${spacing} w-fit bg-${template?.color} text-sm text-white px-2 font-bold`}
+                    className={`mt-${spacing} text-white w-fit  text-sm px-2 font-bold bg-${template.color}`}
                   >
-                    {item.employer}, {item.city}
+                    {item?.employer}, {item?.city}
                   </h2>
                   <div className="flex mt-1 text-[0.8rem]">
                     <p> {item.startDate}</p>

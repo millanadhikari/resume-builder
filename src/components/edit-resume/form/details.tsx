@@ -19,6 +19,9 @@ import { addSection, personal } from "./misc/data";
 import Custom from "./misc/custom";
 import { useAppStore } from "@/store/store";
 import { v4 as uuidv4 } from "uuid";
+import Happy from "@/components/icons/happy";
+import Sad from "@/components/icons/sad";
+import SuperHappy from "@/components/icons/superHappy";
 
 interface SocialLink {
   header: string;
@@ -38,6 +41,8 @@ function Details() {
   const { employment, setEmployment } = useAppStore();
 
   const { socialLinks, setSocialLinks } = useAppStore();
+
+  const summaryCount = summary.length;
 
   // const [skills, setSkills] = useState<any>([
   //   {
@@ -564,9 +569,17 @@ function Details() {
     };
   }, [ref1, resumeDetails]);
 
-  // useEffect(() => {
-  //   console.log("omg", summary);
-  // }, [summary]);
+  useEffect(() => {
+    console.log("omg", summary);
+  }, [summary]);
+
+  function countTextLength(text: any) {
+    // Remove HTML tags from the text using a regular expression
+    const strippedText = text.replace(/<[^>]*>/g, "");
+    // Count the length of the stripped text
+    return strippedText.length;
+  }
+
   return (
     <div className="w-full my-10 ">
       <div className="w-full ">
@@ -574,7 +587,7 @@ function Details() {
           <div key={item.id}>
             <div className="flex items-center mb-4 ">
               <input
-                className="text-xl md:text-2xl font-bold placeholder:text-black focus:outline-none bg-white"
+                className="text-xl md:text-3xl font-bold placeholder:text-black focus:outline-none bg-white"
                 disabled={item.edit}
                 placeholder={item.header}
               ></input>
@@ -592,7 +605,7 @@ function Details() {
                 <MdOutlineEdit />
               </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 items-center ">
+            <div className="grid gap-4 md:grid-cols-2 items-center ">
               {item.fields.map((field, fieldIndex) => (
                 <div className=" " key={fieldIndex}>
                   <p className="text-[0.9rem] md:text-[1rem] text-gray-500 mb-1">
@@ -601,7 +614,7 @@ function Details() {
                   <div className="">
                     <Input
                       placeholder={field.name == "title" ? "e.g. Teacher" : ""}
-                      className="bg-gray-200 w-full md:w-/12"
+                      className="bg-blue-50 w-full md:w-/12"
                       value={field.value}
                       onChange={(e) =>
                         handleInputChange(itemIndex, fieldIndex, e.target.value)
@@ -635,9 +648,33 @@ function Details() {
         <div className="mt-4">
           <QuillEditor desc={summary} setSummary={setSummary} />
         </div>
-        <p className="mt-12 text-[0.8rem] md:text-[0.9rem] text-gray-500">
-          Recruiter tip: write 5-200 characters to increase interview chances.
-        </p>
+        <div className="pt-2 flex items-center justify-between">
+          <p className="text-[0.9rem] md:text-[0.9rem] text-gray-500">
+            Recruiter tip: write 5-200 characters to increase interview chances.
+          </p>
+          <div>
+            <span className="flex items-center gap-1">
+              <p className="font-semibold text-nowrap">
+                {countTextLength(summary)} /
+              </p>
+              <p className="text-gray-500">
+                {" "}
+                {countTextLength(summary) >= 50 ? 200 : "50+"}
+              </p>
+              <span className="pl-1">
+                {countTextLength(summary) <= 40 ? (
+                  countTextLength(summary) !== 0 && <Sad />
+                ) : countTextLength(summary) <= 50 ? (
+                  <Happy />
+                ) : countTextLength(summary) <= 200 ? (
+                  <SuperHappy />
+                ) : (
+                  <Happy />
+                )}
+              </span>
+            </span>
+          </div>
+        </div>
       </div>
       <Employment
         employment={employment}
@@ -719,3 +756,5 @@ function Details() {
 }
 
 export default Details;
+
+

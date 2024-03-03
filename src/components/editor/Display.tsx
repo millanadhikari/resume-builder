@@ -25,7 +25,7 @@ function Display({ preview, setPreview }: any) {
     { id: 2, color: "blue-500" },
     { id: 3, color: "red-500" },
     { id: 4, color: "green-500" },
-    { id: 5, color: "yellow-500" },
+    { id: 5, color: "black" },
   ];
 
   
