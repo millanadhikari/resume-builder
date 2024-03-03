@@ -173,7 +173,7 @@ function ResumeScore() {
         </div>
       </div>
       <div className="mt-3">
-        <Progress value={total} indicatorClassName={`${color}`}/>
+        <Progress value={total} className={`${color}`}/>
       </div>
     </div>
   );
