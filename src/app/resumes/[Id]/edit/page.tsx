@@ -55,7 +55,7 @@ function Page() {
           <Details />
         </section>
       </div>
-      {sticky()}
+      {/* {sticky()} */}
       <span onClick={() => setPreview(!preview)}>
         <PreviewIcon />
       </span>
@@ -70,17 +70,17 @@ function Page() {
 
 export default Page;
 
-const sticky = () => {
-  return (
-    <div
-      className="w-[290px] gap-5 py-4 flex justify-center items-center 
-  bg-[#1a91f0] fixed right-5  bottom-5 rounded-full cursor-pointer
-  hover:bg-blue-400"
-    >
-      <div className="font-bold text-white text-lg">Preview & Download</div>
-      <span className="text-4xl text-white">
-        <HiDocumentText />{" "}
-      </span>
-    </div>
-  );
-};
+// const sticky = () => {
+//   return (
+//     <div
+//       className="w-[290px] gap-5 py-4 flex transition-all duration-300 justify-center items-center 
+//   bg-[#1a91f0] fixed right-5  bottom-5 rounded-full cursor-pointer
+//   hover:bg-blue-400"
+//     >
+//       <div className={`mr-2 font-bold text-white text-lg ${scrollDirection === 'down' ? 'transform translate-x-full opacity-0' : 'transform-none'}`}>Preview & Download</div>
+//       <span className={`text-xl text-4xl text-white ${scrollDirection === 'down' ? 'opacity-100' : 'opacity-100'}`}>
+//         <HiDocumentText />{" "}
+//       </span>
+//     </div>
+//   );
+// };

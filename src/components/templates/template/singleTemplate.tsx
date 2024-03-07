@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -14,13 +14,18 @@ interface Template {
 }
 
 interface Props {
-  template: Template;
+  template: any;
+  handleTemplate: (template: any) => void;
 }
-const SingleTemplate = ({ template }: Props) => {
-    const router = useRouter()
+const SingleTemplate = ({ template, handleTemplate }: Props) => {
+  const router = useRouter();
+  const handleResume = () => {
+    handleTemplate(template);
+    router.push("/create-resume");
+  };
   return (
-    <div className="my-5 md:w-[550px]">
-      <div className="relative flex align-center justify-center w-full md:w-[550px] h-[700px] bg-blue-50 ">
+    <div className="my-5 ">
+      <div className="relative flex align-center justify-center w-full md:w-[550px] h-[700px] bg-blue-50 mx-auto ">
         <div className="w-full m-5 md:mx-10 h-[620px]  bg-white flex items-center justify-center ">
           <Image
             src={template.img}
@@ -29,7 +34,10 @@ const SingleTemplate = ({ template }: Props) => {
             width={420}
           />
         </div>
-        <Button onClick={()=> router.push('/create-resume') } className="absolute bottom-40 left-40 md:left-[180px] bg-[#1a91f0] text-md font-semibold py-7 px-5 hover:bg-blue-400">
+        <Button
+          onClick={handleResume}
+          className="absolute bottom-40 left-40 md:left-[180px] bg-[#1a91f0] text-md font-semibold py-7 px-5 hover:bg-blue-400"
+        >
           Use This Template
         </Button>
         <div className="absolute flex align-center justify-between w-full bottom-4 px-5 md:px-10">

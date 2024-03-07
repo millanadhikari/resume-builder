@@ -1,6 +1,7 @@
 "use client";
 import Introduction from "@/components/multiform/Introduction";
 import Main from "@/components/multiform/Main";
+import { useAppStore } from "@/store/store";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -8,6 +9,7 @@ import { useForm } from "react-hook-form";
 function Page() {
   const router = useRouter();
   const [step, setStep] = useState(1);
+  const {template} = useAppStore()
   const {
     register,
     handleSubmit,
@@ -43,6 +45,14 @@ function Page() {
 
   const doneStep2 =
     watch("firstName") && watch("lastName") && watch("email") !== "";
+
+    useEffect(() => {
+      const l = template ? 'ok' : 'false'
+
+      console.log(l)
+
+      template && setStep(2)
+    }, [])
 
   return (
     <div>

@@ -1,13 +1,20 @@
+'use client'
 import { Button } from "@/components/ui/button";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SingleTemplate from "./template/singleTemplate";
 import { TEMPLATES } from "@/lib/data";
+import { useAppStore } from "@/store/store";
 
 export function TabsDemo() {
+  const { template, setTemplate } = useAppStore();
+
+  const handleTemplate = (template:any) => {
+    setTemplate(template)
+  }
   return (
-    <Tabs defaultValue="all-templates" className="w-full  ">
-      <TabsList className="w-full flex ">
+    <Tabs defaultValue="all-templates" className="w-full">
+      <TabsList className="flex w-full  ">
         <TabsTrigger value="all-templates">ALL TEMPLATES</TabsTrigger>
         <TabsTrigger value="simple">SIMPLE</TabsTrigger>
         <TabsTrigger value="modern">MODERN</TabsTrigger>
@@ -17,7 +24,7 @@ export function TabsDemo() {
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 ">
           <>
             {TEMPLATES.map((template) => (
-              <SingleTemplate key={template.id} template={template} />
+              <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
             ))}
           </>
         </div>
@@ -28,7 +35,7 @@ export function TabsDemo() {
           {TEMPLATES.map((template) => (
             <>
               {template.design === "Simple" && (
-                <SingleTemplate key={template.id} template={template} />
+                <SingleTemplate handleTemplate={handleTemplate}  key={template.id} template={template} />
               )}
             </>
           ))}
@@ -36,11 +43,11 @@ export function TabsDemo() {
       </TabsContent>
       <TabsContent value="modern" className="lg:w-full">
         {" "}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 ">
-          {TEMPLATES.map((template) => (
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 mx-auto ">
+          {TEMPLATES.map((template, index) => (
             <>
               {template.design === "Modern" && (
-                <SingleTemplate key={template.id} template={template} />
+                <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
               )}
             </>
           ))}
@@ -52,7 +59,7 @@ export function TabsDemo() {
           {TEMPLATES.map((template) => (
             <>
               {template.design === "Professional" && (
-                <SingleTemplate key={template.id} template={template} />
+                <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
               )}
             </>
           ))}

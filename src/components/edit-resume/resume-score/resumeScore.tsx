@@ -26,14 +26,13 @@ function ResumeScore() {
 
   useEffect(() => {
     total >= 15 && setColor("bg-yellow-500");
-    total >= 35 && setColor('bg-orange-600')
-    total >= 45 && setColor('bg-pink-600')
-    total >= 80 && setColor('bg-green-600')
+    total >= 35 && setColor("bg-orange-600");
+    total >= 45 && setColor("bg-pink-600");
+    total >= 80 && setColor("bg-green-600");
 
     // total <= 15 ? setColor('red-500') : setColor('green-500')
     console.log(color);
   }, [total]);
-
 
   useEffect(() => {
     console.log("hints", custom);
@@ -67,7 +66,7 @@ function ResumeScore() {
     const internshipValue =
       custom.length > 0 &&
       custom?.map((internship: any) => {
-        internship.type === 'internship' && internship.fields.length > 0;
+        internship.type === "internship" && internship.fields.length > 0;
       });
 
     //email
@@ -152,28 +151,28 @@ function ResumeScore() {
     >
       <div className="flex justify-between">
         <div className="flex gap-3">
-          <h2
-            className={`${color} text-white font-bold px-1 rounded-md `}
-          >
+          <h2 className={`${color} text-white font-bold px-1 rounded-md `}>
             {total}%
           </h2>
           <p className="text-gray-500">Resume score</p>
         </div>
-        <div>
-          <Hints
-            emailApplied={emailApplied}
-            jobApplied={jobApplied}
-            summaryApplied={summaryApplied}
-            employmentApplied={employmentApplied}
-            educationApplied={educationApplied}
-            skillsApplied={skillsApplied}
-            internshipApplied={internshipApplied}
-            total={total}
-          />
-        </div>
+        {total <= 80 && (
+          <div>
+            <Hints
+              emailApplied={emailApplied}
+              jobApplied={jobApplied}
+              summaryApplied={summaryApplied}
+              employmentApplied={employmentApplied}
+              educationApplied={educationApplied}
+              skillsApplied={skillsApplied}
+              internshipApplied={internshipApplied}
+              total={total}
+            />
+          </div>
+        )}
       </div>
       <div className="mt-3">
-        <Progress value={total} className={`${color}`}/>
+        <Progress value={total} className={`${color}`} />
       </div>
     </div>
   );

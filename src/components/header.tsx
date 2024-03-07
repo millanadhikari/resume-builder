@@ -52,7 +52,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 const Header = () => {
   return (
-    <header className="p-4 flex justify-between items-center">
+    <header className="fixed w-full top-0 z-50 bg-white p-4 py-2 flex justify-between items-center">
       <Link href="/" className="flex justify-left items-center">
         <Image src={"/logo.JPG"} alt="resume_logo" width={60} height={60} />
         <span className="font-semibold text-xl">resume.io</span>
