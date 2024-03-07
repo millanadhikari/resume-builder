@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import { TabsDemo } from "@/components/templates/tabs";
 import { Button } from "@/components/ui/button";
 import React from "react";
@@ -5,7 +6,8 @@ import React from "react";
 const Page = () => {
   return (
     <>
-      <section className="h-full w-full pt-[50px] relative flex items-center justify-center flex-col px-5">
+    <Header/>
+      <section className="h-full w-full pt-[50px] relative flex items-center justify-center flex-col px-5 mt-8">
         <h1 className="text-2xl md:text-4xl font-bold my-2 text-center ">
           Job-winning resume templates
         </h1>

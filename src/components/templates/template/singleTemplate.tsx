@@ -25,8 +25,8 @@ const SingleTemplate = ({ template, handleTemplate }: Props) => {
   };
   return (
     <div className="my-5 ">
-      <div className="relative flex align-center justify-center w-screen md:w-[550px] h-[700px] bg-blue-50 mx-auto ">
-        <div className="w-full m-5 md:mx-10 h-[620px]  bg-white flex items-center justify-center ">
+      <div className="relative flex align-center justify-center w-screen sm:w-[550px] h-fit md:h-[700px] bg-blue-50 mx-auto ">
+        <div className="w-full m-5 mb-10 md:mx-10 h-fit md:h-[620px]   bg-white flex items-center justify-center ">
           <Image
             src={template.img}
             alt={"resume_templates"}
@@ -40,7 +40,7 @@ const SingleTemplate = ({ template, handleTemplate }: Props) => {
         >
           Use This Template
         </Button>
-        <div className="absolute flex align-center justify-between w-full bottom-4 px-5 md:px-10">
+        <div className="absolute flex align-center justify-between w-full bottom-3 px-5 md:px-10">
           <div className="flex gap-4">
             <p className="h-4 w-4 bg-black rounded-full cursor-pointer hover:bg-white hover:ring-4 ring-black"></p>
             <p className="h-4 w-4 bg-green-800 rounded-full cursor-pointer hover:bg-white hover:ring-4 ring-green-800"></p>

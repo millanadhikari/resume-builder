@@ -14,11 +14,11 @@ export function TabsDemo() {
   };
   return (
     <Tabs defaultValue="all-templates" className="w-screen md:w-full">
-      <TabsList className="flex w-full  ">
+      <TabsList className="flex w-full px-2  ">
         <TabsTrigger value="all-templates">ALL TEMPLATES</TabsTrigger>
         <TabsTrigger value="simple">SIMPLE</TabsTrigger>
         <TabsTrigger value="modern">MODERN</TabsTrigger>
-        <TabsTrigger value="professional">PROFESSIONAL</TabsTrigger>
+        <TabsTrigger value="professional">PROF</TabsTrigger>
       </TabsList>
       <TabsContent value="all-templates" className="w-screen md:w-full">
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 ">
