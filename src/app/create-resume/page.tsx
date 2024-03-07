@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 function Page() {
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const {template} = useAppStore()
+  const { template } = useAppStore();
   const {
     register,
     handleSubmit,
@@ -40,19 +40,19 @@ function Page() {
   const onSubmit = (data: any) => {
     const { firstName, lastName, email } = data;
     console.log(data);
-    router.push('/resumes/989898/edit')
+    router.push("/resumes/989898/edit");
   };
 
   const doneStep2 =
     watch("firstName") && watch("lastName") && watch("email") !== "";
 
-    useEffect(() => {
-      const l = template ? 'ok' : 'false'
+  useEffect(() => {
+    const l = template ? "ok" : "false";
 
-      console.log(l)
+    console.log(l);
 
-      template && setStep(2)
-    }, [])
+    template && setStep(2);
+  }, []);
 
   return (
     <div>

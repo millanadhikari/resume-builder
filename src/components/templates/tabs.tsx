@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -9,22 +9,26 @@ import { useAppStore } from "@/store/store";
 export function TabsDemo() {
   const { template, setTemplate } = useAppStore();
 
-  const handleTemplate = (template:any) => {
-    setTemplate(template)
-  }
+  const handleTemplate = (template: any) => {
+    setTemplate(template);
+  };
   return (
-    <Tabs defaultValue="all-templates" className="w-full">
+    <Tabs defaultValue="all-templates" className="w-screen md:w-full">
       <TabsList className="flex w-full  ">
         <TabsTrigger value="all-templates">ALL TEMPLATES</TabsTrigger>
         <TabsTrigger value="simple">SIMPLE</TabsTrigger>
         <TabsTrigger value="modern">MODERN</TabsTrigger>
         <TabsTrigger value="professional">PROFESSIONAL</TabsTrigger>
       </TabsList>
-      <TabsContent value="all-templates" className="lg:w-full">
+      <TabsContent value="all-templates" className="w-screen md:w-full">
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 ">
           <>
             {TEMPLATES.map((template) => (
-              <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
+              <SingleTemplate
+                handleTemplate={handleTemplate}
+                key={template.id}
+                template={template}
+              />
             ))}
           </>
         </div>
@@ -35,7 +39,11 @@ export function TabsDemo() {
           {TEMPLATES.map((template) => (
             <>
               {template.design === "Simple" && (
-                <SingleTemplate handleTemplate={handleTemplate}  key={template.id} template={template} />
+                <SingleTemplate
+                  handleTemplate={handleTemplate}
+                  key={template.id}
+                  template={template}
+                />
               )}
             </>
           ))}
@@ -47,7 +55,11 @@ export function TabsDemo() {
           {TEMPLATES.map((template, index) => (
             <>
               {template.design === "Modern" && (
-                <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
+                <SingleTemplate
+                  handleTemplate={handleTemplate}
+                  key={template.id}
+                  template={template}
+                />
               )}
             </>
           ))}
@@ -59,7 +71,11 @@ export function TabsDemo() {
           {TEMPLATES.map((template) => (
             <>
               {template.design === "Professional" && (
-                <SingleTemplate handleTemplate={handleTemplate} key={template.id} template={template} />
+                <SingleTemplate
+                  handleTemplate={handleTemplate}
+                  key={template.id}
+                  template={template}
+                />
               )}
             </>
           ))}

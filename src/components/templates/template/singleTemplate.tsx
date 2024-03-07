@@ -25,7 +25,7 @@ const SingleTemplate = ({ template, handleTemplate }: Props) => {
   };
   return (
     <div className="my-5 ">
-      <div className="relative flex align-center justify-center w-full md:w-[550px] h-[700px] bg-blue-50 mx-auto ">
+      <div className="relative flex align-center justify-center w-screen md:w-[550px] h-[700px] bg-blue-50 mx-auto ">
         <div className="w-full m-5 md:mx-10 h-[620px]  bg-white flex items-center justify-center ">
           <Image
             src={template.img}
@@ -36,7 +36,7 @@ const SingleTemplate = ({ template, handleTemplate }: Props) => {
         </div>
         <Button
           onClick={handleResume}
-          className="absolute bottom-40 left-40 md:left-[180px] bg-[#1a91f0] text-md font-semibold py-7 px-5 hover:bg-blue-400"
+          className="absolute bottom-40 left-30 md:left-[180px] bg-[#1a91f0] text-md font-semibold py-7 px-5 hover:bg-blue-400"
         >
           Use This Template
         </Button>

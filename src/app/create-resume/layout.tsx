@@ -4,7 +4,7 @@ import React from "react";
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="h-full">
-      dfdf
+      <Header/>
       {children}
     </main>
   );

@@ -15,7 +15,7 @@ export default function Home() {
       <section className="h-full w-full pt-[100px] relative flex items-center justify-center flex-col px-5 bg-[#eff2f9]">
         <h2 className="font-semibold md:text-xl">ONLINE RESUME BUILDER</h2>
 
-        <h1 className="text-3xl md:text-4xl font-bold my-5  text-center">
+        <h1 className="text-2xl md:text-4xl font-bold my-5  text-center">
           Only 2% of resumes make it past <br className="hidden md:inline" />
           the first round. Be in the top 2%
         </h1>

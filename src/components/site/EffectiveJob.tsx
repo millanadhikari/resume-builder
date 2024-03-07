@@ -19,7 +19,7 @@ function EffectiveJob() {
         <h1 className="text-3xl font-bold max-w-[450px] md:text-4xl mx-auto lg:mx-0 ">
           Professional resumes for effective job interviews
         </h1>
-        <p className="text-[1.1rem] tracking-wide max-w-[600px] mx-auto lg:w-[450px] lg:mx-0">
+        <p className="text-[1rem] md:text-[1.1rem] tracking-wide max-w-[600px] mx-auto lg:w-[450px] lg:mx-0">
           A great job application leads to a good interview. An amazing resume
           is what makes it all possible. Start off strong with the hiring
           manager by creating a positive professional image. A job interview can
